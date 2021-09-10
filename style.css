@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #1f2d3d;
+  line-height: 1.4545454545;
+}
+
+span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #7d858f;
+  line-height: 1.5;
+}
+
+strong {
+  font-size: 22px;
+  color: #2860e1;
+  line-height: 1.0909090909;
+}
+
+strong span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #525d69;
+  line-height: 1.5;
+}
+
+button {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+}
+
+#prev {
+  background-image: url(./assets/icon-backward.svg);
+}
+
+#next {
+  background-image: url(./assets/icon-forward.svg);
+}
+
+/* ▼ WHERE YOUR CODE BEGINS */
+
+.card {
+  width: 400px;
+}
+
+.card-carousel {
+  position: relative;
+  background-color: black;
+}
+
+.card-carousel img {
+  display: block;
+  /* img는 원래 inline이므로 block으로 바꿔준다.  */
+  width: 100%;
+  /* 부모의 width에 꽉 맞게 한다.  */
+  height: auto;
+  /* 사진이 원래 가지고 있던 비율에 맞춰서 알아서 조정한다.  */
+}
+
+#prev,
+#next {
+  position: absolute;
+  /* position이 absolute라는 것은 position이 static이 아닌 것을 기준으로 하겠다는 것이므로 
+  기준으로 할 card-carousel의 position을 relative로 바꿔준다.  */
+  top: 50%;
+  transform: translateY(-50%);
+  /* 자신이 있는 위치에서 X입력만큼, Y입력만큼 옮겨준다. %가 들어가는 경우 자기 자신을 기준으로 한다.  */
+}
+
+#prev {
+  left: 0;
+}
+
+#next {
+  right: 0;
+}
+
+.card-content {
+  padding: 12px 16px;
+}
+
+.card-content h1 {
+  margin-bottom: 2px;
+}
+
+.card-content strong {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+}
